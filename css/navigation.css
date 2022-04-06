@@ -1,0 +1,211 @@
+body {
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+:root {
+  /* --primaryColor: #fff; */
+  --navColor1: #0B45B0;
+  --navColor2: #1B5DD5;
+  --navColor3: #3F78DF;
+  --navColor4: #6291E7;
+  --navColor5: #8EB1F0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* --- Navigation Menu ------------------------------ */
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  width: 15vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateX(15vw);
+}
+
+.overlay-slide-left {
+  right: 0;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(15vw);
+}
+
+.overlay-slide-right {
+  right: 0;
+  transition: all 0.8s ease-in-out;
+  transform: translateX(0vw);
+}
+
+
+/* Nav Menu Items */
+.nav,
+.nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+.nav ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+.nav li a {
+  position: relative;
+  top: 9%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 50px;
+}
+
+.nav li a:hover {
+  transform: scale(1.2);
+}
+
+.nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+
+.nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+
+.nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+
+.nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+
+.nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+
+/* Slide in animation with delay for each nav item */
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.1s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.3s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 0.5s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to{
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animation with delay for each nav item */
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(100%);
+  }
+
+  to{
+    transform: translateX(0);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade out nav bars */
+.change .bar1,
+.change .bar2,
+.change .bar3 {
+  opacity: 0;
+}
+
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}
